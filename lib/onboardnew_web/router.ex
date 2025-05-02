@@ -17,7 +17,9 @@ defmodule OnboardnewWeb.Router do
   scope "/", OnboardnewWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", WelcomeLive
+    get "/welcome", WelcomeController, :index
+    live "/welcome-live", WelcomeLive
   end
 
   # Other scopes may use custom stacks.
